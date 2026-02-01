@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04  # উবুন্টু ভার্সন নির্দিষ্ট করে দেওয়া হলো স্ট্যাবিলিটির জন্য
 
     steps:
       - name: Checkout code
@@ -19,7 +19,9 @@ jobs:
           command: buildozer android debug
           buildozer_version: master
         env:
-          USER: root  # এই লাইনটি ত্রুটি সমাধান করবে
+          # এই লাইনটি পাইথন এনভায়রনমেন্ট ত্রুটি সমাধান করবে
+          PIP_BREAK_SYSTEM_PACKAGES: 1
+          USER: root
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
