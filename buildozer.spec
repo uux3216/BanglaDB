@@ -20,15 +20,10 @@ version = 1.0
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-# 🔥 IMPORTANT: Added kivymd, requests, pillow here
 requirements = python3,kivy==2.2.0,kivymd,pillow,requests,urllib3,chardet,idna,certifi
 
 # (str) Supported orientation (landscape, portrait, portrait-reverse or landscape-reverse)
 orientation = portrait
-
-#
-# Android specific
-#
 
 # (bool) Indicate if the application should be fullscreen or not
 fullscreen = 0
@@ -50,6 +45,9 @@ android.archs = arm64-v8a, armeabi-v7a
 
 # (bool) enables Android auto backup feature (Android API >=23)
 android.allow_backup = True
+
+# 🔥 এই লাইনটিই মিসিং ছিল, এটি অটোমেটিক লাইসেন্স এক্সেপ্ট করবে
+android.accept_sdk_license = True
 
 # (str) The format used to package the app for debug mode (apk or aar).
 android.debug_artifact = apk
